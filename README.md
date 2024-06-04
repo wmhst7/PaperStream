@@ -33,3 +33,7 @@ Building PaperStream revealed the significant potential of integrating AI with d
 - Handling large PDF files without sacrificing performance.
 - How to improve the AI model's summarization accuracy and relevance?
 - How to reduce the LLM model's response time for better user experience?
+
+## Link
+
+https://techin510-final.streamlit.app/ 
