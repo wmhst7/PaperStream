@@ -4,7 +4,12 @@ from PyPDF2 import PdfReader
 import os
 import google.generativeai as genai
 import base64
-
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+from collections import Counter
+import pandas as pd
+import seaborn as sns
+import numpy as np
 
 # Load environment variables
 load_dotenv()
@@ -25,7 +30,7 @@ st.set_page_config(page_title="PaperStream", page_icon="📄", layout="wide")
 st.title("PaperStream")
 
 # Layout configuration
-col1, col2 = st.columns([7, 3])
+col1, col2 = st.columns([6, 4])
 
 with col1:
     # Upload PDF and show in viewer
@@ -41,6 +46,30 @@ with col1:
         uploaded_file.seek(0)
         reader = PdfReader(uploaded_file)
         all_text = " ".join([page.extract_text() for page in reader.pages if page.extract_text() is not None])
+    
+    # Generate word cloud
+    st.subheader("Word Cloud")
+    if all_text:
+        wordcloud = WordCloud(width=700, height=400).generate(all_text)
+        fig, ax = plt.subplots()
+        ax.imshow(wordcloud, interpolation='bilinear')
+        ax.axis('off')
+        st.pyplot(fig)
+
+    # Generate additional statistics
+    st.subheader("Top Words Frequency")
+    if all_text:
+        words = all_text.split()
+        word_counts = Counter(words)
+        top_words = word_counts.most_common(10)
+        df = pd.DataFrame(top_words, columns=['Word', 'Frequency'])
+        
+        plt.figure(figsize=(10, 5))  # Adjusting the figure size
+        sns.barplot(x='Frequency', y='Word', data=df, palette='viridis')
+        plt.title('Top 10 Most Frequent Words')
+        st.pyplot(plt)
+
+
 
 with col2:
     st.header("Interact with Paper")

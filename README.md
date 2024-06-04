@@ -1,19 +1,35 @@
-# Interactive-Dashboards-With-Streamlit
-Create Interactive Dashboards With Streamlit in Python - a short **Coursera** project
+# PaperStream
 
-The project involves creation of a webapp using python scripts, and demostrating the data and analyses on the same. The analysis involved is sentiment analysis.
+## A Single Sentence to Impress
+PaperStream transforms how you interact with academic papers, combining AI-powered summaries, interactive Q&A, and dynamic visual data insights directly from any uploaded PDF.
 
-### Components:-
-1. Build interactive data dashboards with Streamlit and Python
-2. Use pandas for data manipulation in data science workflows
-3. Create interactive plots with Plotly Python
+## Technologies Used
+- **Streamlit**: For creating a sleek, user-friendly web interface.
+- **PyPDF2**: To extract text from uploaded PDF files.
+- **google.generativeai**: To access cutting-edge AI models for text summarization and interaction.
+- **Matplotlib and Seaborn**: For generating statistical graphics.
+- **WordCloud**: To visualize key terms from the documents.
+- **Dotenv**: For managing environment variables securely.
 
-### Dashboard Snippets
+## Problems We Are Trying to Solve
+PaperStream addresses the challenge of quickly digesting complex academic documents, enhancing accessibility through summaries, and interactive AI-driven exploration. It aids in visualizing key concepts and terms without reading the entire document, saving time and enhancing understanding.
 
-![Histogram](https://github.com/singhishita/Interactive-Dashboards-With-Streamlit/blob/master/histogram.png)
+## How to Run
+1. Clone the repository and navigate to the project directory.
+2. Install required dependencies using `pip install -r requirements.txt`.
+3. Run the Streamlit application with `streamlit run app.py`.
+4. Upload a PDF to view its content, generate summaries, and interact with the embedded AI.
 
-![Pie Chart](https://github.com/singhishita/Interactive-Dashboards-With-Streamlit/blob/master/piechart.png)
+## Reflections
+Building PaperStream revealed the significant potential of integrating AI with document handling, pushing the boundaries of traditional reading methods.
 
-![Tweets Location](https://github.com/singhishita/Interactive-Dashboards-With-Streamlit/blob/master/maptweets.png)
+## What You Learned
+- Implementing AI APIs in a web application.
+- Advanced text manipulation and extraction techniques.
+- Building interactive data visualizations dynamically based on user input.
 
-![Tweet Sentiment Breakdown](https://github.com/singhishita/Interactive-Dashboards-With-Streamlit/blob/master/tweetbreakdown.png)
+## Challenges and Questions
+- How to optimize PDF text extraction for better accuracy?
+- Handling large PDF files without sacrificing performance.
+- How to improve the AI model's summarization accuracy and relevance?
+- How to reduce the LLM model's response time for better user experience?

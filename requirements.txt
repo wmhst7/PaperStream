@@ -1,0 +1,8 @@
+streamlit
+PyPDF2
+google-generativeai
+matplotlib
+wordcloud
+pandas
+seaborn
+numpy
